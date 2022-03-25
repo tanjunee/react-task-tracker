@@ -10,11 +10,16 @@ interface Props {
 const Task: React.FC<Props> = ({ task, onDelete, onToggle }: Props) => {
   return (
     <div
+      data-testid="task"
       className={`task ${task.reminder ? 'reminder' : ''}`}
       onDoubleClick={() => onToggle(task.id)}>
       <h3>
-        {task.text}{' '}
-        <FaTimes style={{ color: 'red', cursor: 'pointer' }} onClick={() => onDelete(task.id)} />
+        {task.text}
+        <FaTimes
+          data-testid="delete-icon"
+          style={{ color: 'red', cursor: 'pointer' }}
+          onClick={() => onDelete(task.id)}
+        />
       </h3>
       <p>{task.day}</p>
     </div>
