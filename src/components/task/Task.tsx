@@ -1,8 +1,8 @@
-import { TaskModel } from '../../App';
 import { FaTimes } from 'react-icons/fa';
+import { TaskObj } from './TaskInterfaces';
 
 interface Props {
-  task: TaskModel;
+  task: TaskObj;
   onDelete: (id: number) => void;
   onToggle: (id: number) => void;
 }

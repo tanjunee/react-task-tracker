@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
-
-export interface TaskRequest {
-  text: string;
-  day: string;
-  reminder: boolean;
-}
+import { TaskRequest } from './TaskInterfaces';
 
 interface Props {
   onAdd: (newTask: TaskRequest) => void;
