@@ -20,8 +20,15 @@ jobs:
           key: dependencies-{{ checksum "package.json" }}
       - run: yarn build
 
+  test:
+    steps:
+      - run: yarn test:ci
+
 # Orchestrate our job run sequence
 workflows:
   build_and_test:
     jobs:
       - build
+      - test:
+          requires:
+            - build
