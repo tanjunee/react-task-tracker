@@ -21,7 +21,11 @@ jobs:
       - run: yarn build
 
   test:
+    docker:
+      - image: node:latest
+
     steps:
+      - checkout
       - run: yarn test:ci
 
 # Orchestrate our job run sequence
